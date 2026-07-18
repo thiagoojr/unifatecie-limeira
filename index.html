@@ -30,7 +30,7 @@
         }
 
         html {
-            scroll-behavior: smooth; /* Garante que a barra de rolagem desça suavemente */
+            scroll-behavior: smooth;
         }
 
         body {
@@ -225,7 +225,10 @@
         .group-header {
             padding: 25px;
             color: white;
-            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
         .gh-base { background: linear-gradient(135deg, #475569, #1e293b); }
@@ -235,20 +238,31 @@
         .gh-g4 { background: linear-gradient(135deg, #6d28d9, #5b21b6); }
         .gh-g5 { background: linear-gradient(135deg, #be185d, #9d174d); }
 
-        .group-header h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        /* Caixa de Preço Centralizada */
+        .price-badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 24px;
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            width: 100%;
+            max-width: 280px;
         }
 
-        .group-header .badge-count {
-            background: rgba(255,255,255,0.2);
-            padding: 3px 12px;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            font-weight: 600;
+        .price-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            display: block;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+            margin-bottom: 2px;
+        }
+
+        .price-value {
+            font-size: 1.4rem;
+            font-weight: 800;
+            display: block;
         }
 
         .course-list {
@@ -331,15 +345,50 @@
             padding-top: 30px;
         }
 
+        /* Link interativo de localização corrigido */
+        .location-link {
+            display: flex;
+            gap: 15px;
+            font-size: 1rem;
+            text-decoration: none;
+            color: inherit;
+            padding: 10px;
+            border-radius: 12px;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .location-link:hover {
+            background-color: #f1f5f9;
+            transform: translateY(-2px);
+        }
+
+        .location-link i {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-top: 3px;
+        }
+
+        .location-link strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 4px;
+            text-decoration: underline;
+        }
+
+        .location-link p {
+            color: var(--text-muted);
+        }
+
         .info-item {
             display: flex;
             gap: 15px;
             font-size: 1rem;
-         }
+            padding: 10px;
+        }
 
         .info-item i {
             color: var(--primary);
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-top: 3px;
         }
 
@@ -372,6 +421,8 @@
             .section-title { font-size: 2rem; }
             .container { padding: 60px 20px; }
             .contact-box { padding: 30px 20px; }
+            .group-header { padding: 20px 15px; }
+            .price-badge { max-width: 100%; }
         }
     </style>
 </head>
@@ -387,7 +438,6 @@
         </div>
         <h1>UniFatecie - Polo Limeira/SP</h1>
         <p>A faculdade inteligente que se adapta à sua rotina. Escolha seu curso de Graduação ou Pós-Graduação EAD e mude seu futuro profissional agora mesmo!</p>
-        <!-- O link href="#cursos" ativa a descida para o ID correto -->
         <a href="#cursos" class="btn btn-orange">
             <i class="fa-solid fa-graduation-cap"></i> Conhecer Cursos
         </a>
@@ -420,7 +470,6 @@
         </div>
     </section>
 
-    <!-- O ID id="cursos" serve como o ponto de destino exato da rolagem -->
     <section id="cursos" class="container">
         <div class="section-header">
             <h2 class="section-title">Nossos Cursos de Graduação</h2>
@@ -429,10 +478,13 @@
 
         <div class="grid-groups">
 
-            <!-- BASE -->
+            <!-- BLOCO R$ 67,50 -->
             <div class="group-card">
                 <div class="group-header gh-base">
-                    <h3>BASE <span class="badge-count">4 Cursos</span></h3>
+                    <div class="price-badge">
+                        <span class="price-label">MENSALIDADE À PARTIR:</span>
+                        <span class="price-value">R$ 67,50</span>
+                    </div>
                 </div>
                 <ul class="course-list">
                     <li><span class="course-name">Design de Produto</span><span class="course-duration">1,5 anos</span></li>
@@ -441,14 +493,17 @@
                     <li><span class="course-name">Segurança no Trânsito</span><span class="course-duration">1,5 anos</span></li>
                 </ul>
                 <div class="group-footer">
-                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20da%20lista%20BASE." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$67,50." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
                 </div>
             </div>
 
-            <!-- GRUPO 1 -->
+            <!-- BLOCO R$ 89,70 -->
             <div class="group-card">
                 <div class="group-header gh-g1">
-                    <h3>GRUPO 1 <span class="badge-count">3 Cursos</span></h3>
+                    <div class="price-badge">
+                        <span class="price-label">MENSALIDADE À PARTIR:</span>
+                        <span class="price-value">R$ 89,70</span>
+                    </div>
                 </div>
                 <ul class="course-list">
                     <li><span class="course-name">Ciências Econômicas</span><span class="course-duration">3 anos</span></li>
@@ -456,30 +511,19 @@
                     <li><span class="course-name">Teologia</span><span class="course-duration">3 anos</span></li>
                 </ul>
                 <div class="group-footer">
-                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20do%20GRUPO%201." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$89,70." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
                 </div>
             </div>
 
-            <!-- GRUPO 2 -->
+            <!-- BLOCO R$ 99,00 -->
             <div class="group-card">
                 <div class="group-header gh-g2">
-                    <h3>GRUPO 2 <span class="badge-count">54 Cursos</span></h3>
+                    <div class="price-badge">
+                        <span class="price-label">MENSALIDADE À PARTIR:</span>
+                        <span class="price-value">R$ 99,00</span>
+                    </div>
                 </div>
                 <ul class="course-list" style="max-height: 400px; overflow-y: auto;">
-                    <li><span class="course-name">Artes <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
-                    <li><span class="course-name">Administração</span><span class="course-duration">3 anos</span></li>
-                    <li><span class="course-name">Artes Visuais</span><span class="course-duration">3 anos</span></li>
-                    <li><span class="course-name">Análise e Desenvolvimento de Sistemas</span><span class="course-duration">2,0 anos</span></li>
-                    <li><span class="course-name">Biblioteconomia</span><span class="course-duration">3 anos</span></li>
-                    <li><span class="course-name">Ciências Biológicas <small>(Semi-presencial) - Bacharelado</small></span><span class="course-duration">4 anos</span></li>
-                    <li><span class="course-name">Ciências Biológicas <small>(Semi-presencial) - Licenciatura</small></span><span class="course-duration">4 anos</span></li>
-                    <li><span class="course-name">Ciências Contábeis</span><span class="course-duration">3 anos</span></li>
-                    <li><span class="course-name">Ciência do Futuro</span><span class="course-duration">1,5 anos</span></li>
-                    <li><span class="course-name">Comércio Exterior</span><span class="course-duration">1,5 anos</span></li>
-                    <li><span class="course-name">Design de Interiores</span><span class="course-duration">1,5 anos</span></li>
-                    <li><span class="course-name">Design de Moda</span><span class="course-duration">1,5 anos</span></li>
-                    <li><span class="course-name">Design de Games</span><span class="course-duration">1,5 anos</span></li>
-                    <li><span class="course-name">Educação Especial <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
                     <li><span class="course-name">Educação Física <small>(Semi-presencial) - Licenciatura</small></span><span class="course-duration">4 anos</span></li>
                     <li><span class="course-name">Filosofia <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
                     <li><span class="course-name">Gastronomia</span><span class="course-duration">1,5 anos</span></li>
@@ -502,6 +546,7 @@
                     <li><span class="course-name">Gestão Pública</span><span class="course-duration">1,5 anos</span></li>
                     <li><span class="course-name">Hotelaria</span><span class="course-duration">1,5 anos</span></li>
                     <li><span class="course-name">Investigação Forense e Perícia Criminal</span><span class="course-duration">3 anos</span></li>
+                    <li><span class="course-name">Jornalismo</span><span class="course-duration">4 anos</span></li>
                     <li><span class="course-name">Logística</span><span class="course-duration">1,5 anos</span></li>
                     <li><span class="course-name">Marketing</span><span class="course-duration">1,5 anos</span></li>
                     <li><span class="course-name">Negócios Imobiliários</span><span class="course-duration">1,5 anos</span></li>
@@ -519,16 +564,33 @@
                     <li><span class="course-name">Sistemas para Internet</span><span class="course-duration">2 anos</span></li>
                     <li><span class="course-name">Sociologia <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
                     <li><span class="course-name">Inteligência Artificial e Machine Learning</span><span class="course-duration">2 anos</span></li>
+                    <li><span class="course-name">Artes <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Administração</span><span class="course-duration">3 anos</span></li>
+                    <li><span class="course-name">Artes Visuais</span><span class="course-duration">3 anos</span></li>
+                    <li><span class="course-name">Análise e Desenvolvimento de Sistemas</span><span class="course-duration">2,0 anos</span></li>
+                    <li><span class="course-name">Biblioteconomia</span><span class="course-duration">3 anos</span></li>
+                    <li><span class="course-name">Ciências Biológicas <small>(Semi-presencial) - Bacharelado</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Ciências Biológicas <small>(Semi-presencial) - Licenciatura</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Ciências Contábeis</span><span class="course-duration">3 anos</span></li>
+                    <li><span class="course-name">Ciência do Futuro</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Comércio Exterior</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Design de Interiores</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Design de Moda</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Design de Games</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Educação Especial <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
                 </ul>
                 <div class="group-footer">
-                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20do%20GRUPO%202." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$99,00." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
                 </div>
             </div>
 
-            <!-- GRUPO 3 -->
+            <!-- BLOCO R$ 149,70 -->
             <div class="group-card">
                 <div class="group-header gh-g3">
-                    <h3>GRUPO 3 <span class="badge-count">6 Cursos</span></h3>
+                    <div class="price-badge">
+                        <span class="price-label">MENSALIDADE À PARTIR:</span>
+                        <span class="price-value">R$ 149,70</span>
+                    </div>
                 </div>
                 <ul class="course-list">
                     <li><span class="course-name">Estética e Cosmética</span><span class="course-duration">2,5 anos</span></li>
@@ -539,14 +601,17 @@
                     <li><span class="course-name">Terapias Integrativas e Complementares <small>(Semi-presencial)</small></span><span class="course-duration">2,5 anos</span></li>
                 </ul>
                 <div class="group-footer">
-                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20do%20GRUPO%203." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$149,70." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
                 </div>
             </div>
 
-            <!-- GRUPO 4 -->
+            <!-- BLOCO R$ 239,70 -->
             <div class="group-card">
                 <div class="group-header gh-g4">
-                    <h3>GRUPO 4 <span class="badge-count">7 Cursos</span></h3>
+                    <div class="price-badge">
+                        <span class="price-label">MENSALIDADE À PARTIR:</span>
+                        <span class="price-value">R$ 239,70</span>
+                    </div>
                 </div>
                 <ul class="course-list">
                     <li><span class="course-name">Arquitetura e Urbanismo <small>(Semi-presencial)</small></span><span class="course-duration">5 anos</span></li>
@@ -558,14 +623,17 @@
                     <li><span class="course-name">Estudos Teóricos Psicanalíticos e Sociais</span><span class="course-duration">4 anos</span></li>
                 </ul>
                 <div class="group-footer">
-                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20do%20GRUPO%204." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$239,70." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
                 </div>
             </div>
 
-            <!-- GRUPO 5 -->
+            <!-- BLOCO R$ 257,70 -->
             <div class="group-card">
                 <div class="group-header gh-g5">
-                    <h3>GRUPO 5 <span class="badge-count">7 Cursos</span></h3>
+                    <div class="price-badge">
+                        <span class="price-label">MENSALIDADE À PARTIR:</span>
+                        <span class="price-value">R$ 257,70</span>
+                    </div>
                 </div>
                 <ul class="course-list">
                     <li><span class="course-name">Biomedicina <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
@@ -577,7 +645,7 @@
                     <li><span class="course-name">Terapia Ocupacional <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
                 </ul>
                 <div class="group-footer">
-                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20do%20GRUPO%205." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$257,70." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
                 </div>
             </div>
 
@@ -589,21 +657,22 @@
             <div class="contact-box">
                 <i class="fa-brands fa-whatsapp" style="font-size: 4rem; color: var(--whatsapp); margin-bottom: 20px;"></i>
                 <h3>Pronto para começar seu futuro?</h3>
-                <p style="margin-bottom: 30px; color: var(--text-muted); font-size: 1.1rem;">🎓 Seu futuro começa com uma conversa!<br>
-Entre em contato com um consultor de carreira do Polo Limeira, esclareça todas as suas dúvidas sobre o processo de inscrição e dê o primeiro passo rumo à sua formação.</p>
+                <p style="margin-bottom: 30px; color: var(--text-muted); font-size: 1.1rem;">Fale agora mesmo com um consultor de carreira do Polo Limeira. Tire suas dúvidas sobre inscrições, documentação e garanta uma bolsa de estudo exclusiva!</p>
                 
                 <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20as%20vagas%20dos%20cursos." target="_blank" class="btn btn-whatsapp">
                     <i class="fa-brands fa-whatsapp"></i> Conversar por WhatsApp
                 </a>
 
                 <div class="info-local">
-                    <div class="info-item">
+                    <!-- URL de busca universal do Google Maps construída com base no endereço físico -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=UniFatecie+Rua+Senador+Vergueiro+227+Centro+Limeira+SP" target="_blank" class="location-link">
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
-                            <strong>Nosso Endereço</strong>
-                            <p>Rua: Senador Vergueiro - n° 227 - Centro - Limeira/SP</p>
+                            <strong>Nosso Endereço (Ver no Mapa)</strong>
+                            <p>Rua Senador Vergueiro, 227<br>Centro - Limeira/SP<br>CEP: 13480-001</p>
                         </div>
-                    </div>
+                    </a>
+                    
                     <div class="info-item">
                         <i class="fa-solid fa-clock"></i>
                         <div>
