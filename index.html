@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniFatecie - Polo Limeira/SP | Graduação e Pós EAD</title>
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0d47a1;
+            --primary-dark: #0a3680;
+            --secondary: #e65100;
+            --secondary-light: #ff7d32;
+            --whatsapp: #25D366;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Garante que a barra de rolagem desça suavemente */
+        }
+
+        body {
+            color: var(--text-main);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(13, 71, 161, 0.95), rgba(30, 41, 59, 0.9)), 
+                        url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 35px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+        }
+
+        .mec-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .mec-badge i {
+            color: #ffd700;
+            margin-right: 8px;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .btn-orange {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-orange:hover {
+            background-color: var(--secondary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(230, 81, 0, 0.3);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebd54;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 90px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+        }
+
+        .features-bg {
+            background-color: var(--bg-light);
+        }
+
+        .grid-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card .icon-wrapper {
+            width: 70px;
+            height: 70px;
+            background: rgba(13, 71, 161, 0.08);
+            color: var(--primary);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 25px auto;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--primary-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .grid-groups {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+        }
+
+        .group-card {
+            background: white;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .group-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+        }
+
+        .group-header {
+            padding: 25px;
+            color: white;
+            position: relative;
+        }
+
+        .gh-base { background: linear-gradient(135deg, #475569, #1e293b); }
+        .gh-g1 { background: linear-gradient(135deg, #1d4ed8, #1e40af); }
+        .gh-g2 { background: linear-gradient(135deg, #047857, #065f46); }
+        .gh-g3 { background: linear-gradient(135deg, #b45309, #92400e); }
+        .gh-g4 { background: linear-gradient(135deg, #6d28d9, #5b21b6); }
+        .gh-g5 { background: linear-gradient(135deg, #be185d, #9d174d); }
+
+        .group-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .group-header .badge-count {
+            background: rgba(255,255,255,0.2);
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .course-list {
+            list-style: none;
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .course-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.98rem;
+        }
+
+        .course-list li:last-child {
+            border-bottom: none;
+        }
+
+        .course-name {
+            font-weight: 600;
+            color: var(--text-main);
+            padding-right: 15px;
+        }
+
+        .course-duration {
+            font-size: 0.85rem;
+            background: #f1f5f9;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
+        .group-footer {
+            padding: 20px 25px;
+            background: #fafafa;
+            border-top: 1px solid #f1f5f9;
+            text-align: center;
+        }
+
+        .btn-sm {
+            padding: 10px 24px;
+            font-size: 0.9rem;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .contact-section {
+            background-color: var(--bg-light);
+            position: relative;
+        }
+
+        .contact-box {
+            background: white;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 40px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        .contact-box h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .info-local {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            text-align: left;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 15px;
+            font-size: 1rem;
+         }
+
+        .info-item i {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-top: 3px;
+        }
+
+        .info-item strong {
+            display: block;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .info-item p {
+            color: var(--text-muted);
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.95rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+            .section-title { font-size: 2rem; }
+            .container { padding: 60px 20px; }
+            .contact-box { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        🚀 Matrículas Abertas para o Polo Limeira/SP — Garanta sua vaga com condições especiais!
+    </div>
+
+    <header class="hero">
+        <div class="mec-badge">
+            <i class="fa-solid fa-star"></i> Nota Máxima 5 no MEC
+        </div>
+        <h1>UniFatecie - Polo Limeira/SP</h1>
+        <p>A faculdade inteligente que se adapta à sua rotina. Escolha seu curso de Graduação ou Pós-Graduação EAD e mude seu futuro profissional agora mesmo!</p>
+        <!-- O link href="#cursos" ativa a descida para o ID correto -->
+        <a href="#cursos" class="btn btn-orange">
+            <i class="fa-solid fa-graduation-cap"></i> Conhecer Cursos
+        </a>
+    </header>
+
+    <section class="container features-bg" style="max-width: 100%;">
+        <div class="container" style="padding: 0 20px;">
+            <div class="section-header">
+                <h2 class="section-title">Por que estudar conosco?</h2>
+                <p class="section-subtitle">Toda a infraestrutura de um Centro Universitário nota máxima, com o suporte local que você precisa em Limeira.</p>
+            </div>
+            
+            <div class="grid-features">
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-award"></i></div>
+                    <h3>Diploma Reconhecido</h3>
+                    <p>Cursos autorizados e muito bem avaliados pelo MEC, com ampla aceitação no mercado de trabalho.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>Estude no Seu Ritmo</h3>
+                    <p>Plataforma de ensino moderna e intuitiva. Acesse as aulas pelo celular, tablet ou computador.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-headset"></i></div>
+                    <h3>Suporte no Polo</h3>
+                    <p>Conte com atendimento humanizado e auxílio presencial sempre que precisar em nosso polo de Limeira.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O ID id="cursos" serve como o ponto de destino exato da rolagem -->
+    <section id="cursos" class="container">
+        <div class="section-header">
+            <h2 class="section-title">Nossos Cursos de Graduação</h2>
+            <p class="section-subtitle">Explore a lista completa de formações divididas por áreas e duração. Encontre a trilha ideal para sua carreira.</p>
+        </div>
+
+        <div class="grid-groups">
+
+            <!-- BASE -->
+            <div class="group-card">
+                <div class="group-header gh-base">
+                    <h3>BASE <span class="badge-count">4 Cursos</span></h3>
+                </div>
+                <ul class="course-list">
+                    <li><span class="course-name">Design de Produto</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Jogos Digitais</span><span class="course-duration">2,0 anos</span></li>
+                    <li><span class="course-name">Produção Publicitária</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Segurança no Trânsito</span><span class="course-duration">1,5 anos</span></li>
+                </ul>
+                <div class="group-footer">
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20da%20lista%20BASE." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                </div>
+            </div>
+
+            <!-- GRUPO 1 -->
+            <div class="group-card">
+                <div class="group-header gh-g1">
+                    <h3>GRUPO 1 <span class="badge-count">3 Cursos</span></h3>
+                </div>
+                <ul class="course-list">
+                    <li><span class="course-name">Ciências Econômicas</span><span class="course-duration">3 anos</span></li>
+                    <li><span class="course-name">Processos Escolares <small>(Semi-presencial)</small></span><span class="course-duration">2 anos</span></li>
+                    <li><span class="course-name">Teologia</span><span class="course-duration">3 anos</span></li>
+                </ul>
+                <div class="group-footer">
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20do%20GRUPO%201." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                </div>
+            </div>
+
+            <!-- GRUPO 2 -->
+            <div class="group-card">
+                <div class="group-header gh-g2">
+                    <h3>GRUPO 2 <span class="badge-count">54 Cursos</span></h3>
+                </div>
+                <ul class="course-list" style="max-height: 400px; overflow-y: auto;">
+                    <li><span class="course-name">Artes <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Administração</span><span class="course-duration">3 anos</span></li>
+                    <li><span class="course-name">Artes Visuais</span><span class="course-duration">3 anos</span></li>
+                    <li><span class="course-name">Análise e Desenvolvimento de Sistemas</span><span class="course-duration">2,0 anos</span></li>
+                    <li><span class="course-name">Biblioteconomia</span><span class="course-duration">3 anos</span></li>
+                    <li><span class="course-name">Ciências Biológicas <small>(Semi-presencial) - Bacharelado</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Ciências Biológicas <small>(Semi-presencial) - Licenciatura</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Ciências Contábeis</span><span class="course-duration">3 anos</span></li>
+                    <li><span class="course-name">Ciência do Futuro</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Comércio Exterior</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Design de Interiores</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Design de Moda</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Design de Games</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Educação Especial <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Educação Física <small>(Semi-presencial) - Licenciatura</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Filosofia <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Gastronomia</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Gestão Ambiental <small>(Semi-presencial)</small></span><span class="course-duration">2 anos</span></li>
+                    <li><span class="course-name">Gestão Comercial</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Geografia <small>(Semi-presencial)</small></span><span class="course-duration">2 anos</span></li>
+                    <li><span class="course-name">História <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Letras <small>(Português/Inglês) (Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Letras <small>(Português/Libras) (Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Matemática <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Música <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Química <small>(Semi-presencial)</small></span><span class="course-duration">3,5 anos</span></li>
+                    <li><span class="course-name">Gestão da Qualidade</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Gestão de Produção Industrial</span><span class="course-duration">2,5 anos</span></li>
+                    <li><span class="course-name">Gestão de Recursos Humanos</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Gestão de Segurança Privada</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Gestão do Agronegócio</span><span class="course-duration">2,5 anos</span></li>
+                    <li><span class="course-name">Gestão Financeira</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Gestão Hospitalar</span><span class="course-duration">3 anos</span></li>
+                    <li><span class="course-name">Gestão Pública</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Hotelaria</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Investigação Forense e Perícia Criminal</span><span class="course-duration">3 anos</span></li>
+                    <li><span class="course-name">Logística</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Marketing</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Negócios Imobiliários</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Pedagogia <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Segurança da Informação</span><span class="course-duration">2 anos</span></li>
+                    <li><span class="course-name">Processos Gerenciais</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Processos Químicos <small>(Semi-presencial)</small></span><span class="course-duration">3 anos</span></li>
+                    <li><span class="course-name">Psicopedagogia <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Publicidade e Propaganda</span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Secretariado</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Segurança do Trabalho</span><span class="course-duration">2,5 anos</span></li>
+                    <li><span class="course-name">Segurança Pública</span><span class="course-duration">1,5 anos</span></li>
+                    <li><span class="course-name">Serviço Social <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Sistemas de Informação</span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Sistemas para Internet</span><span class="course-duration">2 anos</span></li>
+                    <li><span class="course-name">Sociologia <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Inteligência Artificial e Machine Learning</span><span class="course-duration">2 anos</span></li>
+                </ul>
+                <div class="group-footer">
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20do%20GRUPO%202." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                </div>
+            </div>
+
+            <!-- GRUPO 3 -->
+            <div class="group-card">
+                <div class="group-header gh-g3">
+                    <h3>GRUPO 3 <span class="badge-count">6 Cursos</span></h3>
+                </div>
+                <ul class="course-list">
+                    <li><span class="course-name">Estética e Cosmética</span><span class="course-duration">2,5 anos</span></li>
+                    <li><span class="course-name">Agente Comunitário <small>(Semi-presencial)</small></span><span class="course-duration">2,5 anos</span></li>
+                    <li><span class="course-name">Engenharia de Produção <small>(Semi-presencial)</small></span><span class="course-duration">5 anos</span></li>
+                    <li><span class="course-name">Engenharia Ambiental e Sanitária <small>(Semi-presencial)</small></span><span class="course-duration">5 anos</span></li>
+                    <li><span class="course-name">Engenharia de Software</span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Terapias Integrativas e Complementares <small>(Semi-presencial)</small></span><span class="course-duration">2,5 anos</span></li>
+                </ul>
+                <div class="group-footer">
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20do%20GRUPO%203." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                </div>
+            </div>
+
+            <!-- GRUPO 4 -->
+            <div class="group-card">
+                <div class="group-header gh-g4">
+                    <h3>GRUPO 4 <span class="badge-count">7 Cursos</span></h3>
+                </div>
+                <ul class="course-list">
+                    <li><span class="course-name">Arquitetura e Urbanismo <small>(Semi-presencial)</small></span><span class="course-duration">5 anos</span></li>
+                    <li><span class="course-name">Engenharia Agronômica <small>(Agronomia) (Semi-presencial)</small></span><span class="course-duration">5 anos</span></li>
+                    <li><span class="course-name">Engenharia Civil <small>(Semi-presencial)</small></span><span class="course-duration">5 anos</span></li>
+                    <li><span class="course-name">Engenharia da Computação</span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Engenharia Elétrica <small>(Semi-presencial)</small></span><span class="course-duration">5 anos</span></li>
+                    <li><span class="course-name">Engenharia Mecânica <small>(Semi-presencial)</small></span><span class="course-duration">5 anos</span></li>
+                    <li><span class="course-name">Estudos Teóricos Psicanalíticos e Sociais</span><span class="course-duration">4 anos</span></li>
+                </ul>
+                <div class="group-footer">
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20do%20GRUPO%204." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                </div>
+            </div>
+
+            <!-- GRUPO 5 -->
+            <div class="group-card">
+                <div class="group-header gh-g5">
+                    <h3>GRUPO 5 <span class="badge-count">7 Cursos</span></h3>
+                </div>
+                <ul class="course-list">
+                    <li><span class="course-name">Biomedicina <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Farmácia <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Fisioterapia <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Fonoaudiologia <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Nutrição <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                    <li><span class="course-name">Podologia <small>(Semi-presencial)</small></span><span class="course-duration">2,5 anos</span></li>
+                    <li><span class="course-name">Terapia Ocupacional <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
+                </ul>
+                <div class="group-footer">
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20do%20GRUPO%205." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contato" class="container contact-section" style="max-width: 100%;">
+        <div class="container" style="padding: 0 20px;">
+            <div class="contact-box">
+                <i class="fa-brands fa-whatsapp" style="font-size: 4rem; color: var(--whatsapp); margin-bottom: 20px;"></i>
+                <h3>Pronto para começar seu futuro?</h3>
+                <p style="margin-bottom: 30px; color: var(--text-muted); font-size: 1.1rem;">Fale agora mesmo com um consultor de carreira do Polo Limeira. Tire suas dúvidas sobre inscrições, documentação e garanta uma bolsa de estudo exclusiva!</p>
+                
+                <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20as%20vagas%20dos%20cursos." target="_blank" class="btn btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> Conversar por WhatsApp
+                </a>
+
+                <div class="info-local">
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>Nosso Endereço</strong>
+                            <p>[Rua: Senador Vergueiro - n° 227 - Centro - Limeira/SP]</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <strong>Horário de Atendimento</strong>
+                            <p>Segunda a Sexta: 09h às 17h<br>Sábados: 08h às 12h (Via WhatsApp)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 <strong>UniFatecie Polo Limeira/SP</strong>. Todos os direitos reservados.<br>
+        Centro Universitário UniFatecie - Credenciado pela Portaria MEC nº 1.419, de 25/07/2019.</p>
+    </footer>
+
+</body>
+</html>
