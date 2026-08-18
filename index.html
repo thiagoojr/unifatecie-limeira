@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniFatecie Polo Limeira/SP | Graduação e Pós-Graduação EAD</title>
     <!-- FontAwesome & Google Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=4WZ5bjyIU6ZJxVBUqw9Jd0m31_TM3dMt5hrSduNH0ceksh43CV7IxkFuaXqW4S5oqEEVBt8Z0Q0n7WYdKTviatorMZdSlgIYgVw7t6y2DXdDwG6Fmwv2Ap2yK9t29yzV6VP8tFbbY4IJ9NJKbvmhRdDHk6TKR_z9NeQLJUasn-FY7-kveSbBzD8KgJtXfUbFIxYdklg_mX2aEn5ZK7jbNgFzZsZTCIK_QdLhG140kbXzHGFmMMvYlzTEoxMuY6NjsOrjFQF7zwVicDze3JA9BI4it0FTgMnFrb3r47_j8dFLhdrP7NoSW57ts3bSU33_LQkNuMW3Um4PWBqeSRJhvA" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jaGF0Z3B0LmNvbS9iYWNrZW5kLWFwaS9lc3R1YXJ5L2NvbnRlbnQ_aWQ9ZmlsZV8wMDAwMDAwMGFlN2M4MjBlODFiNTk1OGJhOTZhMjY0YyZmbj1pbmRleF91bmlmYXRlY2llX2NvcmVzX29maWNpYWlzLmh0bWwmY2Q9YXR0YWNobWVudCZ0cz00OTY0MTAmcD1mcyZjaWQ9MSZzaWc9ZGJiM2IwNzAyZTUwNGU3ZjQ0NzlhZjY3NjNlYzY0ZGYwOTMwZGU5NDA5MjEwZDE0NGFjODRmYjU2YzBmZDkxMyZ2PTA"/><style>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"><style>
         :root {
             --primary: #F58220;
             --primary-dark: #C95A00;
-            --secondary: #F58220;
-            --secondary-light: #FF8A3D;
+            --secondary: #0056A6;
+            --secondary-dark: #003F7D;
+            --secondary-light: #1976C9;
+            --accent-blue: #0056A6;
+            --accent-orange: #F58220;
             --whatsapp: #25D366;
-            --text-main: #171717;
-            --text-muted: #666666;
-            --bg-light: #FFF7F1;
+            --text-main: #172033;
+            --text-muted: #667085;
+            --bg-light: #F4F8FC;
             --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
 
@@ -107,12 +108,13 @@
         }
 
         .btn-orange {
-            background-color: var(--secondary);
+            background-color: var(--accent-blue);
             color: white;
         }
 
         .btn-orange:hover {
-            background-color: var(--secondary-light);
+            background-color: var(--secondary-dark);
+
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(230, 81, 0, 0.3);
         }
@@ -231,7 +233,12 @@
             text-align: center;
         }
 
-        .gh-base, .gh-g1, .gh-g2, .gh-g3, .gh-g4, .gh-g5, .gh-g6 { background: linear-gradient(135deg, #F58220, #C95A00); }
+        .gh-base, .gh-g2, .gh-g4, .gh-g6 {
+            background: linear-gradient(135deg, #F58220, #C95A00);
+        }
+        .gh-g1, .gh-g3, .gh-g5 {
+            background: linear-gradient(135deg, #0056A6, #003F7D);
+        }
         
         
         
@@ -416,6 +423,94 @@
             color: white;
         }
 
+
+        /* Ícones institucionais UniFatecie */
+        .icon-wrapper {
+            position: relative;
+        }
+        .feature-card .icon-wrapper i,
+        .location-link > i,
+        .info-item > i {
+            color: var(--primary);
+        }
+        .feature-card:nth-child(2) .icon-wrapper {
+            background: rgba(0, 86, 166, 0.10);
+            color: var(--accent-blue);
+        }
+        .feature-card:nth-child(2) .icon-wrapper i {
+            color: var(--accent-blue);
+        }
+        .feature-card:nth-child(3) .icon-wrapper {
+            background: rgba(245, 130, 32, 0.10);
+        }
+        .contact-box .fa-whatsapp {
+            filter: drop-shadow(0 4px 8px rgba(37, 211, 102, 0.18));
+        }
+        .nav-links a:not(.nav-cta):hover {
+            color: var(--accent-blue);
+        }
+        .location-link:hover,
+        .info-item:hover {
+            background-color: #F4F8FC;
+        }
+
+
+        /* Ícones SVG locais — não dependem de CDN */
+        .ui-icon {
+            width: 1.25em;
+            height: 1.25em;
+            display: inline-block;
+            flex: 0 0 auto;
+            vertical-align: -0.2em;
+            fill: currentColor;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .icon-wrapper .ui-icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: middle;
+        }
+        .floating-whatsapp .ui-icon {
+            width: 1.6em;
+            height: 1.6em;
+        }
+        .contact-box > .ui-icon {
+            width: 4rem;
+            height: 4rem;
+            margin-bottom: 20px;
+        }
+        .brand-logo, .hero-logo-text {
+            display: inline-flex;
+            align-items: baseline;
+            font-weight: 800;
+            letter-spacing: -1.8px;
+            line-height: 1;
+        }
+        .brand-logo {
+            font-size: 2rem;
+        }
+        .brand-logo .brand-uni, .hero-logo-text .brand-uni {
+            color: #0056A6;
+        }
+        .brand-logo .brand-fatecie, .hero-logo-text .brand-fatecie {
+            color: #F58220;
+        }
+        .hero-logo-text {
+            font-size: 3.1rem;
+            background: #fff;
+            padding: 14px 24px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.16);
+            margin: 0 auto 25px;
+        }
+        @media (max-width: 768px) {
+            .brand-logo { font-size: 1.65rem; }
+            .hero-logo-text { font-size: 2.35rem; }
+        }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .hero p { font-size: 1.1rem; }
@@ -450,10 +545,8 @@
             align-items: center;
             text-decoration: none;
         }
-        .brand img {
-            width: 190px;
-            max-height: 54px;
-            object-fit: contain;
+        .brand-logo {
+            min-height: 42px;
         }
         .nav-links {
             display: flex;
@@ -493,15 +586,7 @@
             max-width: 950px;
             margin: auto;
         }
-        .hero-logo {
-            width: 260px;
-            max-width: 80%;
-            margin: 0 auto 25px;
-            background: white;
-            padding: 14px 24px;
-            border-radius: 14px;
-            box-shadow: 0 10px 30px rgba(0,0,0,.16);
-        }
+
         .section-title::after {
             content: "";
             display: block;
@@ -538,12 +623,12 @@
         }
         @media (max-width: 768px) {
             .site-header-inner { min-height: 66px; }
-            .brand img { width: 155px; }
+            .brand-logo { min-height: 36px; }
             .nav-links { gap: 8px; }
             .nav-links a:not(.nav-cta) { display: none; }
             .nav-cta { padding: 9px 13px; font-size: .78rem !important; }
             .hero { min-height: 560px; padding: 80px 18px; }
-            .hero-logo { width: 210px; }
+
             .floating-whatsapp { right: 16px; bottom: 16px; }
         }
 
@@ -558,13 +643,13 @@
     <header class="site-header">
         <div class="site-header-inner">
             <a class="brand" href="#" aria-label="UniFatecie Polo Limeira">
-                <img src="https://unifatecie.edu.br/site/wp-content/uploads/2021/09/logo-unifatecie.png" alt="UniFatecie">
+                <span class="brand-logo" aria-label="UniFatecie"><span class="brand-uni">Uni</span><span class="brand-fatecie">Fatecie</span></span>
             </a>
             <nav class="nav-links" aria-label="Navegação principal">
                 <a href="#cursos">Cursos</a>
                 <a href="#contato">Contato</a>
                 <a class="nav-cta" href="https://wa.me/5519997039342?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20da%20UniFatecie%20Polo%20Limeira." target="_blank">
-                    Falar com Consultor
+                    <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><path d="M4 13h3v6H5a1 1 0 0 1-1-1v-5ZM20 13h-3v6h2a1 1 0 0 0 1-1v-5ZM17 19h-2"/></svg> Falar com Consultor
                 </a>
             </nav>
         </div>
@@ -573,14 +658,14 @@
 
     <header class="hero">
         <div class="hero-inner">
-            <img class="hero-logo" src="https://unifatecie.edu.br/site/wp-content/uploads/2021/09/logo-unifatecie.png" alt="Logo UniFatecie">
+            <div class="hero-logo-text" aria-label="UniFatecie"><span class="brand-uni">Uni</span><span class="brand-fatecie">Fatecie</span></div>
             <div class="mec-badge">
-            <i class="fa-solid fa-star"></i> Nota Máxima 5 no MEC
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2l1.1-6.2L3 9.6l6.2-.9L12 3Z"/></svg> Nota Máxima 5 no MEC
         </div>
         <h1>UniFatecie - Polo Limeira/SP</h1>
         <p>A faculdade inteligente que se adapta à sua rotina. Escolha seu curso de Graduação ou Pós-Graduação EAD e mude seu futuro profissional agora mesmo!</p>
         <a href="#cursos" class="btn btn-orange">
-            <i class="fa-solid fa-graduation-cap"></i> Conhecer Cursos
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-5 9 5-9 5-9-5Z"/><path d="M7 11.2V15c0 2 2.2 4 5 4s5-2 5-4v-3.8"/><path d="M21 10v5"/></svg> Conhecer Cursos
         </a>
     </header>
 
@@ -593,17 +678,17 @@
             
             <div class="grid-features">
                 <div class="feature-card">
-                    <div class="icon-wrapper"><i class="fa-solid fa-award"></i></div>
+                    <div class="icon-wrapper" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="m9.5 12.3-1 8.2 3.5-2 3.5 2-1-8.2"/></svg></div>
                     <h3>Diploma Reconhecido</h3>
                     <p>Cursos autorizados e muito bem avaliados pelo MEC, com ampla aceitação no mercado de trabalho.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="icon-wrapper"><i class="fa-solid fa-laptop-code"></i></div>
+                    <div class="icon-wrapper" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M2 20h20M9 9l-2 2 2 2M15 9l2 2-2 2"/></svg></div>
                     <h3>Estude no Seu Ritmo</h3>
                     <p>Plataforma de ensino moderna e intuitiva. Acesse as aulas pelo celular, tablet ou computador.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="icon-wrapper"><i class="fa-solid fa-headset"></i></div>
+                    <div class="icon-wrapper" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><path d="M4 13h3v6H5a1 1 0 0 1-1-1v-5ZM20 13h-3v6h2a1 1 0 0 0 1-1v-5ZM17 19h-2"/></svg></div>
                     <h3>Suporte no Polo</h3>
                     <p>Conte com atendimento humanizado e auxílio presencial sempre que precisar em nosso polo de Limeira.</p>
                 </div>
@@ -634,7 +719,7 @@
                     <li><span class="course-name">Segurança no Trânsito</span><span class="course-duration">1,5 anos</span></li>
                 </ul>
                 <div class="group-footer">
-                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$67,50." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$67,50." target="_blank" class="btn btn-orange btn-sm><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.2-.5.4-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c.7 1.3 1.6 2.1 2.9 2.8l.7-.6c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .4 0 .6-.5.8-.5.2-1 .3-1.5.2-2.1-.4-5.2-3.5-5.6-5.6-.1-.5 0-1 .2-1.5Z"/></svg> Consultar Vagas</a>
                 </div>
             </div>
 
@@ -652,7 +737,7 @@
                     <li><span class="course-name">Teologia</span><span class="course-duration">3 anos</span></li>
                 </ul>
                 <div class="group-footer">
-                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$89,70." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$89,70." target="_blank" class="btn btn-orange btn-sm><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.2-.5.4-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c.7 1.3 1.6 2.1 2.9 2.8l.7-.6c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .4 0 .6-.5.8-.5.2-1 .3-1.5.2-2.1-.4-5.2-3.5-5.6-5.6-.1-.5 0-1 .2-1.5Z"/></svg> Consultar Vagas</a>
                 </div>
             </div>
 
@@ -721,7 +806,7 @@
                     <li><span class="course-name">Educação Especial <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
                 </ul>
                 <div class="group-footer">
-                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$99,01." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$99,01." target="_blank" class="btn btn-orange btn-sm><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.2-.5.4-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c.7 1.3 1.6 2.1 2.9 2.8l.7-.6c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .4 0 .6-.5.8-.5.2-1 .3-1.5.2-2.1-.4-5.2-3.5-5.6-5.6-.1-.5 0-1 .2-1.5Z"/></svg> Consultar Vagas</a>
                 </div>
             </div>
 
@@ -742,7 +827,7 @@
                     <li><span class="course-name">Terapias Integrativas e Complementares <small>(Semi-presencial)</small></span><span class="course-duration">2,5 anos</span></li>
                 </ul>
                 <div class="group-footer">
-                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$149,70." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$149,70." target="_blank" class="btn btn-orange btn-sm><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.2-.5.4-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c.7 1.3 1.6 2.1 2.9 2.8l.7-.6c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .4 0 .6-.5.8-.5.2-1 .3-1.5.2-2.1-.4-5.2-3.5-5.6-5.6-.1-.5 0-1 .2-1.5Z"/></svg> Consultar Vagas</a>
                 </div>
             </div>
 
@@ -764,7 +849,7 @@
                     <li><span class="course-name">Estudos Teóricos Psicanalíticos e Sociais</span><span class="course-duration">4 anos</span></li>
                 </ul>
                 <div class="group-footer">
-                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$239,70." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$239,70." target="_blank" class="btn btn-orange btn-sm><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.2-.5.4-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c.7 1.3 1.6 2.1 2.9 2.8l.7-.6c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .4 0 .6-.5.8-.5.2-1 .3-1.5.2-2.1-.4-5.2-3.5-5.6-5.6-.1-.5 0-1 .2-1.5Z"/></svg> Consultar Vagas</a>
                 </div>
             </div>
 
@@ -784,7 +869,7 @@
                     <li><span class="course-name">Podologia <small>(Semi-presencial)</small></span><span class="course-duration">2,5 anos</span></li>
                                     </ul>
                 <div class="group-footer">
-                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$277,70." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a>
+                    <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$277,70." target="_blank" class="btn btn-orange btn-sm><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.2-.5.4-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c.7 1.3 1.6 2.1 2.9 2.8l.7-.6c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .4 0 .6-.5.8-.5.2-1 .3-1.5.2-2.1-.4-5.2-3.5-5.6-5.6-.1-.5 0-1 .2-1.5Z"/></svg> Consultar Vagas</a>
                 </div>
                         <div class="group-card">
                 <div class="group-header gh-g6"><div class="price-badge"><span class="price-label">MENSALIDADE A PARTIR:</span><span class="price-value">R$299,90</span></div></div>
@@ -792,7 +877,7 @@
 <li><span class="course-name">Fonoaudiologia <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
 <li><span class="course-name">Radiologia</span><span class="course-duration">2,5 anos</span></li>
 <li><span class="course-name">Terapia Ocupacional <small>(Semi-presencial)</small></span><span class="course-duration">4 anos</span></li>
-</ul><div class="group-footer"><a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$299,90." target="_blank" class="btn btn-orange btn-sm">Consultar Vagas</a></div></div>
+</ul><div class="group-footer"><a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20os%20cursos%20com%20mensalidade%20a%20partir%20de%20R$299,90." target="_blank" class="btn btn-orange btn-sm><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.2-.5.4-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c.7 1.3 1.6 2.1 2.9 2.8l.7-.6c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .4 0 .6-.5.8-.5.2-1 .3-1.5.2-2.1-.4-5.2-3.5-5.6-5.6-.1-.5 0-1 .2-1.5Z"/></svg> Consultar Vagas</a></div></div>
 </div>
 
         </div>
@@ -801,19 +886,19 @@
     <section id="contato" class="container contact-section" style="max-width: 100%;">
         <div class="container" style="padding: 0 20px;">
             <div class="contact-box">
-                <i class="fa-brands fa-whatsapp" style="font-size: 4rem; color: var(--whatsapp); margin-bottom: 20px;"></i>
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.2-.5.4-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c.7 1.3 1.6 2.1 2.9 2.8l.7-.6c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .4 0 .6-.5.8-.5.2-1 .3-1.5.2-2.1-.4-5.2-3.5-5.6-5.6-.1-.5 0-1 .2-1.5Z"/></svg>
                 <h3>Pronto para começar seu futuro?</h3>
                 <p style="margin-bottom: 30px; color: var(--text-muted); font-size: 1.1rem;">🎓 Seu futuro começa com uma conversa!<br>
                             Entre em contato com um consultor de carreira do Polo Limeira, esclareça todas as suas dúvidas sobre o processo de inscrição e dê o primeiro passo rumo à sua formação.</p>
                 
                 <a href="https://wa.me/5519997039342?text=Olá!%20Acessei%20a%20página%20do%20Polo%20Limeira%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20as%20vagas%20dos%20cursos." target="_blank" class="btn btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Conversar por WhatsApp
+                    <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.2-.5.4-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c.7 1.3 1.6 2.1 2.9 2.8l.7-.6c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .4 0 .6-.5.8-.5.2-1 .3-1.5.2-2.1-.4-5.2-3.5-5.6-5.6-.1-.5 0-1 .2-1.5Z"/></svg> Conversar por WhatsApp
                 </a>
 
                 <div class="info-local">
                     <!-- URL de busca universal do Google Maps construída com base no endereço físico -->
                     <a href="https://www.google.com/maps/search/?api=1&query=UniFatecie+Rua+Senador+Vergueiro+227+Centro+Limeira+SP" target="_blank" class="location-link">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.2"/></svg>
                         <div>
                             <strong>Nosso Endereço (Ver no Mapa)</strong>
                             <p>Rua Senador Vergueiro, 227<br>Centro - Limeira/SP<br>CEP: 13480-001</p>
@@ -821,7 +906,7 @@
                     </a>
                     
                     <div class="info-item">
-                        <i class="fa-solid fa-clock"></i>
+                        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg>
                         <div>
                             <strong>Horário de Atendimento</strong>
                             <p>Segunda a Sexta: 09h às 17h</p>
@@ -833,7 +918,7 @@
     </section>
 
     <a class="floating-whatsapp" href="https://wa.me/5519997039342?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20da%20UniFatecie%20Polo%20Limeira." target="_blank" aria-label="Falar com a UniFatecie pelo WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
+        <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.2-.5.4-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.6.7c.7 1.3 1.6 2.1 2.9 2.8l.7-.6c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .4 0 .6-.5.8-.5.2-1 .3-1.5.2-2.1-.4-5.2-3.5-5.6-5.6-.1-.5 0-1 .2-1.5Z"/></svg>
     </a>
 
     <footer>
